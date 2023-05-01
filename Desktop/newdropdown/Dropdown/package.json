@@ -1,0 +1,29 @@
+{
+  "name": "multiselectdropdown",
+  "version": "1.0.0",
+  "description": "",
+  "engines": {
+    "node": ">=7.8.0"
+  },
+  "files": [
+    "index.js",
+    "index.css"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuragsharma0829/Dropdownpackage.git"
+  },
+  "keywords": [
+    "multiselect"
+  ],
+  "author": "Anurag Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anuragsharma0829/Dropdownpackage/issues"
+  },
+  "homepage": "https://github.com/anuragsharma0829/Dropdownpackage#readme"
+}

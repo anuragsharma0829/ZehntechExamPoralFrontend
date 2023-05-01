@@ -1,0 +1,142 @@
+
+  .table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    width: 140px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  body li{    
+  padding:5px;
+  list-style-type:none;
+  list-style-position: inside;
+  }
+
+  #dropdownMenuButton{
+  width: 100%;
+  color: black;
+  background: white;
+}
+
+
+#itemList2:hover,#itemList1:hover{
+  background-color: white;
+  color: black;
+  /* margin-left: -5 */
+ 
+}
+
+#categoryList1:hover,#categoryList2:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    /* margin-left: 12px; */
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+.vl22 {
+    border-left: 1px solid rgb(6, 7, 6);
+    /* height: 270px; */
+    height: auto;
+  }
+
+  #myInput{
+    width: 97%;
+    margin-left: 10px;
+  }
+
+  .vl222{
+   width: 10%;
+   content:"Reset Selection";
+   position: fixed;
+  }
+
+  #noItemsMessage{
+    display: none;
+  }
+
+  .caret {
+    transform: rotate(90deg);
+  }
+
+  .btn .caret {
+    margin-left: 0;
+    display: none;
+}
+
+.dropdown-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#count-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dropdown-toggle::after {
+  margin-left: 0.3em;
+}
+.dropdown-toggle span {
+  order: -1;
+}
+
+
+.name{
+  background-color: red;
+}
+
+.divvv{
+  border: 1px;
+}
+
+
+#btn1{
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+#btn2{
+  position: absolute;
+  bottom: 0;
+  right: 140;
+color: rgb(81, 118, 240);
+}
+
+#btn3{
+  position: absolute;
+  bottom: 0;
+  right: 30;
+  width: 12%;
+  border-radius: 0px;
+  background-color: #cfc6c6;
+  color: black;
+}
+#hr{
+  background-color: black;
+  color: black;
+  height:0.3px;
+}
+
+.col-7 {
+  -ms-flex: 0 0 58.333333%;
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+  overflow: scroll;
+    height: 295px;
+    overflow-x: hidden;
+}
