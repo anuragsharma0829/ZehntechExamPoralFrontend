@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+
+#count-checked-checkboxes,
+.form-required {
+    color:red;
+}
+
+
+</style>
+</head>
+<body>
+
+    <input type=checkbox id='ckb1' value=One> One <br>
+<input type=checkbox id='ckb2' value=Two> Two <br>
+<input type=checkbox id='ckb3' value=Three> Three <br>
+<input type=checkbox id='ckb4' value=Four> Four <br>
+<input type=checkbox id='ckb5' value=Five> Five <br>
+
+<button type='button' class='btn btn-secondary'  id=d1></button>
+
+        <script>
+            $(document).ready(function() {
+            $('input[type="checkbox"]').change(function(){
+            var total_checked=  $("input[type='checkbox']:checked").length 
+            $("#d1").html("Total Number of checkbox checked  = " + total_checked );
+            });
+            /////////////
+            var total_checked=  $("input[type='checkbox']:checked").length 
+            $("#d1").html("Total Number of checkbox checked  = " + total_checked );
+            ///////
+            });
+            </script>
+
+</body>
+</html>
