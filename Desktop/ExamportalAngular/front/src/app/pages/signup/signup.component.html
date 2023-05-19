@@ -1,0 +1,211 @@
+
+<div class="body" style="background-color: azure;">
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+
+            <mat-card class="scard">
+
+            <div class="container text-center">
+                <img src="../../../assets/logo.jpg" class="rounded-image" height="100px" width="100px" alt="">
+            </div>
+            
+            <h1 class="text-center">Register!!</h1>
+
+            <!-- {{user|json}} -->
+         
+
+            <form  
+            name="form"
+            #f="ngForm"
+            novalidate
+            (ngSubmit)="formSubmit()" >
+                <!-- USername -->
+<!--                
+                <mat-form-field class="full-width" appearance="outline">
+                 
+                    <mat-label>User Name</mat-label>
+                    <input [(ngModel)]="user.username" name="username"  required  matInput placeholder="Enter here">
+                  </mat-form-field> -->
+
+
+                
+                   <div class="form-group ">
+                    
+                    <input
+                    type="text"
+                    class="form-control lf"
+                    name="username"
+                    [(ngModel)]="user.username"
+                    required
+                    #username="ngModel"
+                    [ngClass]="{ 'is-invalid': f.submitted && username.errors }"
+                    minlength="6"
+                    maxlength="20"
+                    matInput placeholder="Enter Username*"/>
+                 
+                  <div *ngIf="f.submitted && username.errors" class="invalid-feedback">
+                    <div *ngIf="username.errors['required']">Username is required</div>
+                    <div *ngIf="username.errors['minlength']">
+                      Username must be at least 6 characters
+                    </div>
+                    <div *ngIf="username.errors['maxlength']">
+                      Username must be at most 20 characters
+                    </div>
+                  </div>
+                </div>
+            
+
+    
+                   <!-- password -->
+                   <!-- <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input type="password" [(ngModel)]="user.password" name="password" required matInput placeholder="Enter here">
+                  </mat-form-field> -->
+
+
+                  <div class="form-group  mt-2">
+                    
+                    <input
+                      type="password"
+                      class="form-control lf"
+                      name="password"
+                      [(ngModel)]="user.password"
+                      required
+                      minlength="6"
+                      maxlength="40"
+                      #password="ngModel"
+                      matInput placeholder="Enter Password*"
+                      [ngClass]="{ 'is-invalid': f.submitted && password.errors }"
+                    />
+                    <div *ngIf="f.submitted && password.errors" class="invalid-feedback">
+                      <div *ngIf="password.errors['required']">Password is required</div>
+                      <div *ngIf="password.errors['minlength']">
+                        Password must be at least 6 characters
+                      </div>
+                      <div *ngIf="password.errors['maxlength']">
+                        Password must not exceed 40 characters
+                      </div>
+                    </div>
+                  </div>
+              
+
+
+                   <!-- Firstame -->
+                <!-- <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input [(ngModel)]="user.firstName" name="firstName" required  matInput placeholder="Enter here">
+                  </mat-form-field> -->
+
+                  <div class="form-group  mt-2">
+                  
+                     <input
+                     type="text"
+                     class="form-control lf"
+                     name="firstName"
+                     [(ngModel)]="user.firstName"
+                     required
+                     #firstName="ngModel"
+                     matInput placeholder="Enter Firstname*"
+                     [ngClass]="{ 'is-invalid': f.submitted && firstName.errors }"
+                    
+                   />
+                     <div *ngIf="f.submitted && firstName.errors" class="invalid-feedback">
+                       <div *ngIf="firstName.errors['required']">FirstName is required</div>
+                     </div>
+                   </div>
+
+
+
+                   <!-- LAstname -->
+                 <!-- <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input  [(ngModel)]="user.lastName" name="lastName" required matInput placeholder="Enter here">
+                  </mat-form-field> -->
+
+                  <div class="form-group  mt-2">
+                  
+                     <input
+                     type="text"
+                     class="form-control lf"
+                     name="lastName"
+                     [(ngModel)]="user.lastName"
+                     required
+                     #lastName="ngModel"
+                     matInput placeholder="Enter Lastname*"
+                     [ngClass]="{ 'is-invalid': f.submitted && lastName.errors }"
+                    
+                   />
+                     <div *ngIf="f.submitted && lastName.errors" class="invalid-feedback">
+                       <div *ngIf="lastName.errors['required']">LastName is required</div>
+                     </div>
+                   </div>
+
+                  
+                   <!-- Email -->
+                <!-- <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <input type="email" [(ngModel)]="user.email" name="email" required matInput placeholder="Enter here">
+                  </mat-form-field> -->
+
+
+                  <div class="form-group  mt-2">
+                    <input
+                      type="email"
+                      class="form-control lf"
+                      name="email"
+                      [(ngModel)]="user.email"
+                      required
+                      email
+                      #email="ngModel"
+                      matInput placeholder="Enter Email*"
+                      [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+                    />
+                    <div *ngIf="f.submitted && email.errors" class="invalid-feedback">
+                      <div *ngIf="email.errors['required']">Email is required</div>
+                      <div *ngIf="email.errors['email']">Email is invalid</div>
+                    </div>
+                  </div>
+                  
+                   <!-- Phone -->
+                <!-- <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Phone Number</mat-label>
+                    <input type="number" [(ngModel)]="user.phone" name="phone" required matInput placeholder="Enter here">
+                  </mat-form-field> -->
+
+
+                  <div class="form-group  mt-2">
+                    <input
+                      type="number"
+                      class="form-control lf"
+                      name="phone"
+                      [(ngModel)]="user.phone"
+                      required
+                      minlength="10"
+                      maxlength="10"
+                      #phone="ngModel"
+                      matInput placeholder="Enter Phone-Number*"
+                      [ngClass]="{ 'is-invalid': f.submitted && phone.errors }"
+                    />
+                    <div *ngIf="f.submitted && phone.errors" class="invalid-feedback">
+                      <div *ngIf="phone.errors['required']">Phone Number is required</div>
+                      <div *ngIf="phone.errors['email']">Phone Number is invalid</div>
+                    </div>
+                  </div>
+
+               
+                 
+                  <div class="container text-center mt-3">
+                    <a href="" routerLink="/login" class="floatright">I already have account</a>
+                    <div class="form-group mt-1">
+                    <button type="submit"  mat-raised-button color="primary">Register</button>
+                    <button type="reset" class="butgap" mat-raised-button color="accent">Reset</button>
+                    </div>
+                  </div>
+                
+            </form>
+        </mat-card>
+        </div>
+    </div>
+</div>
+</div>

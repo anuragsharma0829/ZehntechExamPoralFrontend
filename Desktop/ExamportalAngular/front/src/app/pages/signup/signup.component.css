@@ -1,0 +1,18 @@
+.full-width{
+    width: 100%;
+}
+.butgap{
+    margin-left: 20px;
+}
+.rounded-image {
+    border-radius: 50%;
+  }
+  .scard{
+    padding: 20px;
+  }
+  .lf{
+    height: 50px;
+  }
+  /* .floatright{
+    float: right;
+  } */

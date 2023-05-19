@@ -1,0 +1,45 @@
+
+<mat-card *ngIf="user" class="mt-4">
+    <mat-card-content>
+        <div class="container">
+
+            <div class="container text-center">
+             <img [src]="imageSrc" class="rounded"  height="75px" width="85px" alt="Image"> 
+             <!-- <img [src]="imageSrc ? imageSrc : getDefaultImage(user.name)" class="rounded" height="75px" width="85px" alt="Profile Image">  -->
+            </div>
+
+            <h1 class="text-center">{{user.firstName}} {{user.lastName}}</h1>
+            
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <!-- table  -->
+                   <table class="table text-center">
+                    <tr>
+                        <td>Username</td>
+                        <td>{{user.username}}</td>
+                    </tr>
+                    <tr>
+                        <td>Firstname</td>
+                        <td>{{user.firstName}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>LastName</td>
+                        <td>{{user.lastName}}</td>
+                    </tr>
+
+                    <tr>
+                        <td>Phone</td>
+                        <td>{{user.phone}}</td>
+                    </tr>
+                    
+                   
+                   </table>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <mat-card-actions class="text-center">
+        <button class="btngap" mat-raised-button color="primary" [routerLink]="'/updateuser/'+user.id" >UPDATE</button>
+      </mat-card-actions>
+</mat-card>

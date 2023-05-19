@@ -1,0 +1,21 @@
+.example-header-image {
+    background-image: url('../../../../assets/exam.png');
+    background-size: cover;
+  }
+
+  .ml{
+    margin-left: 10px;
+  }
+
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 16px;
+  }
+  .h1{
+    margin-top: 10px;
+    margin-left:10px
+  }
+  .width{
+    width: 100%;
+  }

@@ -1,0 +1,8 @@
+.rounded-image {
+    border-radius: 50%;
+  }
+
+  canvas baseChart .chartjs-pie-label {
+    font-size: 14px;
+    margin-left: 20px;
+  }

@@ -1,0 +1,22 @@
+<mat-sidenav-container class="sidenav-container sticky">
+
+    <mat-action-list>
+
+        <button mat-list-item routerLink="/user-dashbaord/0"
+        class="mt-4"><mat-icon
+        mat-list-icon>quiz</mat-icon><span>Quizzes</span>
+        </button>
+
+
+                <mat-form-field appearance="fill" class="mt-3">
+                    <mat-label>Choose Quiz</mat-label>
+                    <mat-select>
+                      <mat-option routerLink="/user-dashbaord/0">All Quizzes</mat-option>
+                      <mat-option *ngFor="let c of categories" [value]="c.title" [routerLink]="'/user-dashbaord/'+c.cid">
+                        {{c.title}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+    </mat-action-list>
+</mat-sidenav-container>

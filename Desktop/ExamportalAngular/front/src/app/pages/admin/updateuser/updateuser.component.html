@@ -1,0 +1,113 @@
+
+<div class="body" style="background-color: azure;">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3">
+
+                <mat-card class="scard">
+
+                    <div class="container text-center">
+                        <img [src]="imageSrc" 
+                            class="rounded-image" height="100px" width="100px"
+                            alt="">
+                    </div>
+
+                    <h1 class="text-center">Update User!!</h1>
+
+                    <!-- {{user|json}} -->
+
+
+                    <form
+                        name="form"
+                        #f="ngForm"
+                        novalidate
+                        enctype="multipart/form-data"
+                        (ngSubmit)="uuser()"
+                      >
+
+
+                        <div class="form-group ">
+                            <input
+                                type="text"
+                                class="form-control lf"
+                                name="username"
+                                placeholder="Username"
+                                [(ngModel)]="user2.username"
+                                />
+                        </div> 
+
+
+                       <div class="form-group mt-2">
+
+                            <input
+                                type="text"
+                                class="form-control lf"
+                                name="firstName"
+                                placeholder="Firstname"
+                                [(ngModel)]="user2.firstName"
+                                />
+                        </div> 
+
+                         <div class="form-group mt-2">
+                            <input
+                                type="text"
+                                class="form-control lf"
+                                name="lastName"
+                                placeholder="Lastname"
+                                [(ngModel)]="user2.lastName"
+                                />
+
+                        </div> 
+
+
+
+                         <!-- <div class="form-group mt-2">
+                            <input
+                                type="email"
+                                class="form-control lf"
+                                name="email"
+                                placeholder="Email"
+                                [(ngModel)]="user2.email"
+                                />
+                        </div>  -->
+
+
+
+                         <div class="form-group mt-2">
+                            <input
+                                type="number"
+                                class="form-control lf"
+                                name="phone"
+                                placeholder="Enter phone number"
+                                [(ngModel)]="user2.phone"
+                                />
+                        </div> 
+
+
+                        <div class="form-group mt-3">
+                            <input
+                                type="file"
+                                name="profile"
+                                [(ngModel)]="user.profile"
+                                (change)="onFileSelected($event)"
+                                class="form-control lf"
+                                />
+                             
+                        </div>
+
+
+                        <div class="container text-center mt-3">
+                            <div class="form-group mt-1">
+                                <button type="submit" mat-raised-button
+                                    color="primary">Update</button>
+                                <button type="reset" class="butgap"
+                                    mat-raised-button color="accent">Reset</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>Read the instructions carefully.</mat-card-title>
+                    <mat-card-subtitle>One step more to go</mat-card-subtitle>
+                </mat-card-header>
+                <!-- content -->
+                <mat-card-content>
+                        <h1>{{quiz.title}}</h1>
+                        <h3> {{quiz.description}}</h3>
+                        <h3>Number of Questions: {{quiz.numberOfQuestions}} <span class="span2">|</span>  <span class="span">Maximum Marks : {{quiz.maxMarks}}</span>   </h3> 
+                        <mat-divider></mat-divider>
+                        <h1>Important instructions</h1>
+ 
+                     <ul>
+                        <li>You can pause the test at any time and resume later.</li>
+                        <li>You can retake the test as many times as you would like.</li>
+                        <li>The progress bar at the top of the screen will show your progress as well as the time remaining in the test.<br> If you run out of time, don’t worry; you will still be able to finish the test.</li>
+                        <li>If you want to finish the test and see your results immediately, press the stop button.</li>
+                        <li>You have to submit the quiz within <b>{{(quiz.numberOfQuestions)*2}}</b> minutes.</li>
+                     </ul>
+                     <!-- <div ngxUiLoaderBlurred [blur]="10">  -->
+                          <mat-divider></mat-divider>
+                          <h1>Attempting Quiz</h1>
+                          <ul>
+                            <li>Click <b>Start Quiz</b>  button to start the quiz</li>
+                            <li>The time will start the moment you click the Start Test button</li>
+                            <li>Scroll down to move to next question</li>
+                            <li>Report of the test is automatically generated in the form of PDF.</li>
+                            <!-- <li></li> -->
+                         </ul>
+                </mat-card-content>
+                <!-- biuttons -->
+                <div class="contaner text-center">
+                    <button class="mt-3" mat-raised-button color="primary" (click)="startQuiz()">Start Quiz</button>
+                </div>
+                <mat-card-actions></mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

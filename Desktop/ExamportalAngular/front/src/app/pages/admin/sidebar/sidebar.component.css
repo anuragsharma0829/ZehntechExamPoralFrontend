@@ -1,0 +1,27 @@
+.sidenav-container {
+    /* height: 100vh; */
+    height: calc(100vh);
+        position: fixed;
+        width: 200px;
+         
+}
+
+.sticky {
+    position: fixed;
+    top: 2;
+    z-index: 5;
+}
+
+.mat-drawer-content {
+    position: fixed;
+ 
+}
+.mat-list-item.active {
+    background-color: #f0f0f0;
+    color: #000;
+  }
+
+  .selected {
+    background-color: black;
+    color: white;
+  }

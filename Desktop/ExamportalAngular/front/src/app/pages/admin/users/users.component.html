@@ -1,0 +1,43 @@
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Profile</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Status</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let u of user">
+        <tr>
+            <th scope="row"><img  class="rounded-image" src="{{api}}{{u.profile || '../../../../../../assets/man.png'}}" height="35px" width="35px" alt="Image"></th>
+            <td>{{u.email}}</td>
+            <td>{{u.phone}}</td>
+            <td>{{u.enabled}}</td>
+            <td><button (click)="deleteUser(u.id)" mat-mini-fab aria-label="Example icon button
+                    with a home icon">
+                  <mat-icon>delete</mat-icon>
+                </button></td>
+               
+        </tr>
+     
+    </tbody>
+  </table>
+
+  <canvas id="myChart"></canvas>
+
+  <div class="col-md-10 offset-md-1">
+
+    <canvas baseChart
+    [type]="'pie'"
+    [datasets]="pieChartDatasets"
+    [labels]="pieChartLabels"
+    [options]="pieChartOptions"
+    [plugins]="pieChartPlugins"
+    [legend]="pieChartLegend">
+  </canvas>
+
+  </div>
+
+

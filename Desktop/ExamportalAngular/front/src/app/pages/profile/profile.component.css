@@ -1,0 +1,26 @@
+.profile-image{
+    max-width: 150px;
+    max-height: 150px;
+    border:2px sloid black;
+    border-radius:50px;
+}
+.table{
+    width:100%;
+   border-collapse: collapse;
+}
+.table tr td{
+   padding:15px 15px; 
+   border:0.5px ridge
+ 
+}
+.text-center{
+    justify-content: center;
+}
+.btngap{
+    margin-right:10px
+}
+.profileee{
+    width: 20%;
+}
+
+

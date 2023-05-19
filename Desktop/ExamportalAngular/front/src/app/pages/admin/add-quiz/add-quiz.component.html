@@ -1,0 +1,91 @@
+<mat-card>
+    <h1 class="ml5 mt-2">Add New Quiz*</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                
+                <form name="form"
+                #f="ngForm"
+                novalidate 
+                (ngSubmit)="addQuiz()" >
+
+                    <!-- title Filed -->
+                    <mat-form-field class="width" appearance="fill">
+                        <mat-label>Enter Title</mat-label>
+                        <input type="text" [(ngModel)]="quizData.title" name="title" #title="ngModel" [ngClass]="{ 'is-invalid': f.submitted && title.errors }"  required matInput placeholder="Enter Here" >
+                        <div *ngIf="f.submitted && title.errors" class="invalid-feedback">
+                            <div *ngIf="title.errors['required']">Title is required</div>
+                          </div>
+                    </mat-form-field>
+                    
+
+
+
+                       <!-- title Filed -->
+                       <mat-form-field class="width" appearance="fill">
+                        <mat-label>Enter Description</mat-label>
+                        <textarea   [(ngModel)]="quizData.description" name="description"  #description="ngModel" [ngClass]="{ 'is-invalid': f.submitted && description.errors }"  required   matInput placeholder="Enter description" textarea></textarea>
+                        <div *ngIf="f.submitted && description.errors" class="invalid-feedback">
+                            <div *ngIf="description.errors['required']">description is required</div>
+                          </div>
+                    </mat-form-field>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- MAx-marks -->
+                            <mat-form-field class="width" appearance="fill">
+                                <mat-label>Maximum Marks</mat-label>
+                                <input type="text"  [(ngModel)]="quizData.maxMarks" name="maxMarks" #maxMarks="ngModel" [ngClass]="{ 'is-invalid': f.submitted && maxMarks.errors }"  required  matInput placeholder="Enter Here">
+                                <div *ngIf="f.submitted && maxMarks.errors" class="invalid-feedback">
+                                    <div *ngIf="maxMarks.errors['required']">MaxMarks is required</div>
+                                  </div>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Number of question to be displayed -->
+                            <mat-form-field class="width" appearance="fill">
+                                <mat-label>Number Of question</mat-label>
+                                <input type="text"  [(ngModel)]="quizData.numberOfQuestions" name="numberOfQuestions"  #numberOfQuestion="ngModel" [ngClass]="{ 'is-invalid': f.submitted && numberOfQuestion.errors }"  required matInput placeholder="Enter Here">
+                                <div *ngIf="f.submitted && numberOfQuestion.errors" class="invalid-feedback">
+                                    <div *ngIf="numberOfQuestion.errors['required']"> NumberOfQuestion is required</div>
+                                  </div>
+                            </mat-form-field>
+                        </div>
+
+
+                        <!-- active field -->
+                        <mat-slide-toggle
+                        [(ngModel)]="quizData.active"
+                        name="active"
+                        class="mt-2 mb-2"
+                        [color]="accent"
+                        [checked]="false"
+                        [disabled]="false">
+                      Publish Status
+                    </mat-slide-toggle>
+
+                    <!-- Category Select -->
+                    <mat-form-field appearance="fill" class="mt-2">
+                        <mat-label>Select Category</mat-label>
+                        <mat-select  [(ngModel)]="quizData.category.cid"  name="category" #category="ngModel" [ngClass]="{ 'is-invalid': f.submitted && category.errors }"  required>
+                          <mat-option *ngFor="let c of categories" [value]="c.cid" >
+                           {{c.title}}
+                          </mat-option>
+                        </mat-select>
+                        <div *ngIf="f.submitted && category.errors" class="invalid-feedback">
+                            <div *ngIf="category.errors['required']">category is required</div>
+                          </div>
+                      </mat-form-field>
+
+                    </div>
+
+                    <div class="container text-center mt-3 mb-3">
+                        <button type="submit" mat-raised-button color="primary">Add</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</mat-card>

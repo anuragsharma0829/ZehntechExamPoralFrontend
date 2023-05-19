@@ -1,0 +1,154 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h1> <b>Adding Question to {{qTitle}} </b> </h1>
+
+            <mat-card>
+
+                <mat-card-header>
+                    <mat-card-subtitle>Enter the detail of the new question</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <form (submit)="formSubmit()" class="mt-3" name="form"
+                        #f="ngForm"
+                        novalidate>
+
+                        <!-- content-field -->
+                        <mat-form-field class="width" appearance="fill">
+                            <mat-label>Leave Comment</mat-label>
+                            <textarea [(ngModel)]="question.content"
+                                name="content"  rows="4" required matInput
+                                placeholder="Enter Here" #content="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted &&
+                                content.errors }"></textarea>
+
+                            <div *ngIf="f.submitted && content.errors"
+                                class="invalid-feedback">
+                                <div *ngIf="content.errors['required']">Content
+                                    is required</div>
+                            </div>
+                        </mat-form-field>
+
+
+                        <!-- options -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="width" appearance="fill">
+                                    <mat-label>option 1</mat-label>
+                                    <input [(ngModel)]="question.option1"
+                                        name="option1" type="text"
+                                        #option1="ngModel" [ngClass]="{
+                                        'is-invalid': f.submitted &&
+                                        option1.errors }" required matInput>
+
+                                        <div *ngIf="f.submitted && option1.errors"
+                                        class="invalid-feedback">
+                                        <div *ngIf="option1.errors['required']">option
+                                            is required</div>
+                                    </div>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-md-6">
+                                <mat-form-field class="width" appearance="fill">
+                                    <mat-label>Option 2</mat-label>
+                                    <input [(ngModel)]="question.option2"
+                                        name="option2" type="text"
+                                        #option2="ngModel" [ngClass]="{
+                                        'is-invalid': f.submitted &&
+                                        option2.errors }" required matInput>
+
+                                        <div *ngIf="f.submitted && option2.errors"
+                                        class="invalid-feedback">
+                                        <div *ngIf="option2.errors['required']">option
+                                            is required</div>
+                                    </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <mat-form-field class="width" appearance="fill">
+                                    <mat-label>option 3</mat-label>
+                                    <input [(ngModel)]="question.option3"
+                                        name="option3" type="text"
+                                        #option3="ngModel" [ngClass]="{
+                                        'is-invalid': f.submitted &&
+                                        option3.errors }" required matInput>
+
+                                        <div *ngIf="f.submitted && option3.errors"
+                                        class="invalid-feedback">
+                                        <div *ngIf="option3.errors['required']">option
+                                            is required</div>
+                                    </div>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col-md-6">
+                                <mat-form-field class="width" appearance="fill">
+                                    <mat-label>option 4</mat-label>
+                                    <input [(ngModel)]="question.option4"
+                                        name="option4" type="text"
+                                        #option4="ngModel" [ngClass]="{
+                                        'is-invalid': f.submitted &&
+                                        option4.errors }" required matInput>
+
+                                        
+                                        <div *ngIf="f.submitted && option4.errors"
+                                        class="invalid-feedback">
+                                        <div *ngIf="option4.errors['required']">option
+                                            is required</div>
+                                    </div>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!--Answer  -->
+                        <mat-form-field class="width">
+                            <mat-label>Select Answer</mat-label>
+                            <mat-select [(ngModel)]="question.answer"
+                                name="answer" required #answer="ngModel"
+                                [ngClass]="{ 'is-invalid': f.submitted &&
+                                answer.errors }">
+                                <mat-option *ngIf="question.option1"
+                                    [value]="question.option1">{{question.option1}}</mat-option>
+                                <mat-option *ngIf="question.option2"
+                                    [value]="question.option2">{{question.option2}}</mat-option>
+                                <mat-option *ngIf="question.option3"
+                                    [value]="question.option3">{{question.option3}}</mat-option>
+                                <mat-option *ngIf="question.option4"
+                                    [value]="question.option4">{{question.option4}}</mat-option>
+                            </mat-select>
+
+  
+                            <div *ngIf="f.submitted && answer.errors"
+                            class="invalid-feedback">
+                            <div *ngIf="answer.errors['required']">Answer
+                                is required</div>
+                        </div>
+
+                        </mat-form-field>
+
+                           <!-- active field -->
+                           <mat-slide-toggle
+                           [(ngModel)]="question.active"
+                           name="active"
+                           class="mt-2 mb-2"
+                           [color]="accent"
+                           [checked]="false"
+                           [disabled]="false">
+                         Publish Status
+                       </mat-slide-toggle>
+
+                        <div class="container text-center">
+                            <button mat-raised-button color="primary">Add</button>
+                            <button class="r" type="reset" mat-raised-button color="primary">Reset</button>
+                        </div>
+                        <!-- {{question|json}} -->
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

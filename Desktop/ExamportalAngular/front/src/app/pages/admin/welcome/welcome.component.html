@@ -1,0 +1,45 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6">
+            <mat-card>
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image"></div>
+                    <mat-card-title>Totel Categories</mat-card-title>
+                    <mat-card-subtitle><h1><b>{{totalcount}}</b></h1></mat-card-subtitle>
+                </mat-card-header>
+               
+              </mat-card>
+        </div>
+      
+        <div class="col-md-6">
+            <mat-card>
+                <mat-card-header>
+                    <div mat-card-avatar class="example-header-image2"></div>
+                    <mat-card-title>Totel Quizzes</mat-card-title>
+                    <mat-card-subtitle><h1><b>{{quizzTotal}}</b></h1></mat-card-subtitle>
+                </mat-card-header>
+               
+              </mat-card>
+        </div>
+          
+       
+   
+  <header class="mt-2">
+    <h1>Top scorer</h1>
+  </header>
+        
+          
+  <mat-card *ngFor="let u of users ; let i=index" class="mt-2">
+    <mat-card-title>Name: {{u.username}}</mat-card-title>
+    <mat-card-header>
+      <div mat-card-avatar [style.background-image]="'url(http://localhost:8081/user/post/image/' + u.profile + ')'" class="example-header-image2"></div>
+      <mat-card-title><span> Top scorer in </span> {{u.quizName}}</mat-card-title>
+      <mat-card-subtitle><h3><b>Getting marks: {{u.marks}}</b></h3></mat-card-subtitle>
+    </mat-card-header>
+  </mat-card>
+
+  
+ 
+
+
+</div>

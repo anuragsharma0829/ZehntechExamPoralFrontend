@@ -1,0 +1,62 @@
+<div class="body" style="background-color: azure;">
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-6 offset-md-3">
+     
+                <mat-card class="lcaard">
+                <div class="container text-center">
+                    <img src="../../../assets/logo.jpg" class="rounded-image"
+                        height="100px" width="100px" alt="">
+                </div>
+    
+                <h1 class="text-center">Forgot Password?</h1>
+   
+                <form 
+                name="form"
+                #f="ngForm"
+                novalidate
+                (ngSubmit)="sendEmail()"
+                
+               >
+
+                      <!-- USername -->
+                      <!-- <div class="form-group  mt-2">
+                        <input type="email" [(ngModel)]="logindataa.email" name="email" required>
+                      </div> -->
+
+                      <h6>Enter your user account's verified email address and we will send you a password reset link.</h6>
+
+                      <div class="form-group  mt-2">
+                        <input
+                          type="email"
+                          class="form-control lf"
+                          name="email"
+                          [(ngModel)]="logindataa.email"
+                          required
+                          email
+                          #email="ngModel"
+                          matInput placeholder="Enter Email*"
+                          [ngClass]="{ 'is-invalid': f.submitted && email.errors }"
+                        />
+                        <div *ngIf="f.submitted && email.errors" class="invalid-feedback">
+                          <div *ngIf="email.errors['required']">Email is required</div>
+                          <div *ngIf="email.errors['email']">Email is invalid</div>
+                        </div>
+                      </div>
+                      
+    
+                      <a class="float-end mb5" routerLink="/login">Back to login? </a>
+                      <div class="container text-center mt-3">
+                       
+                        <button type="submit" mat-raised-button color="primary">Send</button>
+                        <button type="reset" class="butgap" mat-raised-button color="accent">Reset</button>
+                      </div>
+                    
+                </form>
+    
+    
+            </mat-card>
+            </div>
+        </div>
+    </div>
+    </div>

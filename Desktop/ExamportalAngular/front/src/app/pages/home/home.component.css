@@ -1,0 +1,41 @@
+
+.card-title{
+  font-size: 50px;
+  margin-left: 50px;
+  color: rgb(212, 245, 235);
+}
+.abc{
+  margin-top: 30px;
+  margin-right: 10px;
+}
+.text{
+  margin-top: 130px;
+}
+.card-img{
+  opacity: 0.5;
+}
+.card-text{
+  font-size: 20px;
+  margin-left: 50px;
+  color: rgb(241, 245, 244);
+}
+.btnca{
+  margin-left: 50px;
+  margin-top: 30px;
+}
+.card-title2{
+  font-size: 50px;
+  color: rgb(14, 15, 15);
+  text-align: center;
+}
+.profile-image{
+  height: 500px;
+  max-width: 500px;
+}
+.cardpp{
+  margin-top: 80px;
+}
+
+.text-center{
+  text-align: center;
+}

@@ -1,0 +1,37 @@
+
+
+<h1 class="mt-4 m-4">All Categories</h1>
+<div class="card-grid">
+    <mat-card class="mt-2" *ngFor="let c of categories" [routerLink]="'/admin/quizCategory/'+c.cid">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>
+                {{c.title}}
+            </mat-card-title>
+
+            <mat-card-subtitle>
+                {{c.description}}
+            </mat-card-subtitle>
+            <mat-card-content>
+
+            </mat-card-content>
+
+
+        </mat-card-header>
+        <mat-card-actions>
+            <button class="floatright" (click)="deleteCategory(c.cid)"
+                mat-raised-button color="primary">Delete</button>
+
+            <button class="floatright"
+                mat-raised-button color="primary" [routerLink]="'/admin/category/'+c.cid">Update</button>
+        </mat-card-actions>
+
+
+
+    </mat-card>
+</div>
+<div class="container text-center mt-4 mb-3">
+    <button routerLink="/admin/add-category" mat-raised-button color="primary">Add
+        New Category</button>
+</div>
+

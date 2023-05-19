@@ -1,0 +1,59 @@
+<mat-toolbar class="navbar sticky" color="primary">
+  <button  *ngIf="!isLoggedIn" routerLink="/" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu_book</mat-icon>
+  </button>
+  <span>Exam Poratl</span>
+  <span class="example-spacer"></span>
+  <!-- <button *ngIf="!login.isLoggedIn()" routerLink="login" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>login</mat-icon>
+  </button>
+  <button *ngIf="!login.isLoggedIn()" routerLink="signup" mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>app_registration</mat-icon>
+  </button>
+  <button (click)="logout()" *ngIf="login.isLoggedIn()"  mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>logout</mat-icon>
+  </button> -->
+
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a  *ngIf="!isLoggedIn" routerLink="login" class="nav-link active" aria-current="page" href="#">Login</a>
+    </li>
+  </ul>
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+    <li class="nav-item">
+      <a *ngIf="!isLoggedIn" routerLink="signup" class="nav-link active" aria-current="page" href="#">Signup</a>
+    </li>
+  </ul>
+
+ 
+
+  <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0 ml-5">
+    <li class="nav-item">
+      <a (click)="logout()" *ngIf="isLoggedIn"  class="nav-link active" aria-current="page" href="#" >Logout</a>
+    </li>
+   
+  </ul> -->
+
+
+  <ul *ngIf="isLoggedIn" class="navbar-nav me-auto mb-2 mb-lg-0 ml5">
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" dropdown-toggle (click)="isOpen = !isOpen" aria-expanded="false">
+      <span class="admin">{{user.firstName}}</span> <img class="profile-image" [src]="imageSrc"   height="35px" width="35px" alt="">
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" [class.show]="isOpen">
+        <a class="ml2 nav-link active" *ngIf="isLoggedIn && this.login.grtUserRole()=='ADMIN' "routerLink="/admin/profile" href="#"> <img src="../../../assets/profile-user.png" height="30px" width="30px" alt=""><span class="ml2">Profile</span></a>
+        <a class="ml2 nav-link active" *ngIf="isLoggedIn && this.login.grtUserRole()=='NORMAL' "routerLink="/user-dashbaord/user/uprofile" href="#"> <img src="../../../assets/profile-user.png" height="30px" width="30px" alt=""><span class="ml2">Profile</span></a>
+        <a (click)="logout()" *ngIf="isLoggedIn" class="ml2 nav-link active" href="#"> <img src="../../../assets/power.png" height="30px" width="30px" alt=""><span class="ml2">Logout</span></a>
+     
+      </div>
+    </div>
+  </ul>
+</mat-toolbar>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+

@@ -1,0 +1,22 @@
+.mr{
+    margin-left: 30px;
+}
+.u{
+    font-weight: bold;
+}
+.mb{
+    margin-bottom: 0px;
+}
+.example-header-image {
+    background-image: url('../../../../assets/category.png');
+    background-size: cover;
+  }
+  .floatright{
+ margin-left: 4%;
+    
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 16px;
+  }

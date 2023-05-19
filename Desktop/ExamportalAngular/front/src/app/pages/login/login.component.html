@@ -1,0 +1,56 @@
+<div class="body" style="background-color: azure;">
+  <div class="container">
+      <div class="row mt-5">
+          <div class="col-md-6 offset-md-3">
+   
+              <mat-card class="lcaard">
+              <div class="container text-center">
+                  <img src="../../../assets/logo.jpg" class="rounded-image"
+                      height="100px" width="100px" alt="">
+              </div>
+  
+              <h1 class="text-center">Login!!</h1>
+  <!-- {{logindata|json}} -->
+              <form 
+              name="form"
+              #f="ngForm"
+              novalidate
+              (ngSubmit)="formSubmit()">
+  
+                    <!-- USername -->
+                    <mat-form-field class="full-width" appearance="fill">
+                      <mat-label>User Name</mat-label>
+                      <input type="email" [(ngModel)]="logindata.username" name="username"  #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.errors }"  required matInput placeholder="Enter here">
+                      <div *ngIf="f.submitted && username.errors" class="invalid-feedback">
+                        <div *ngIf="username.errors['required']">username is required</div>
+                        <div *ngIf="username.errors['username']">username is invalid</div>
+                      </div>
+                    </mat-form-field>
+                   
+  
+                     <!--password -->
+                     <mat-form-field class="full-width" appearance="fill">
+                      <mat-label>User Password</mat-label>
+                      <input [(ngModel)]="logindata.password" type="password" name="password"  #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.errors }"  required  matInput placeholder="Enter here">
+                      <div *ngIf="f.submitted && password.errors" class="invalid-feedback">
+                        <div *ngIf="password.errors['required']">Password is required</div>
+                        <div *ngIf="password.errors['email']">Email is invalid</div>
+                      </div>
+                    </mat-form-field>
+  
+  
+                    <a class="float-end mb5" routerLink="/cheakmail">Forgot Password ? </a>
+                    <div class="container text-center">
+                     
+                      <button type="submit" mat-raised-button color="primary">Login</button>
+                      <button type="reset" class="butgap" mat-raised-button color="accent">Reset</button>
+                    </div>
+                  
+              </form>
+  
+  
+          </mat-card>
+          </div>
+      </div>
+  </div>
+  </div>
